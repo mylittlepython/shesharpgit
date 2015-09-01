@@ -1,3 +1,4 @@
+#http://webpy.org/
 import web
 
 urls = ('/(.*)/', 'redirect',
