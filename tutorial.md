@@ -62,6 +62,10 @@ example: assume we have numerous python files: git add *.py
 -> git push origin branch_name 
 assuming is the master branch, becomes: git push origin master
 
+
+====================================
+http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
+
 but Git is inherently distributed :) this means friends from all around
 the globe work together simultaneously
 ->git pull origin master to get latest project updates
