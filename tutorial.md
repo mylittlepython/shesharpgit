@@ -43,6 +43,8 @@ we can work with the cloned project from our device
 let's assume we don't like the cloned project name
 git clone https://github.com/mylittlepython/shesharpgit.git favoriteName
 
+->git status -s (s stands for short)
+
 ->transfer protocols (https, git, ssh)
 
 case 2: new project
@@ -52,6 +54,7 @@ case 2: new project
 creates .git directory that represents a Git repository skeleton
 
 let's assume we create our src files and readme, etc.
+"add this content to the next commit" cmd
 -> git add <file>
 example: assume we have numerous python files: git add *.py
 -> git commit -m 'this is our commit'
@@ -59,9 +62,36 @@ example: assume we have numerous python files: git add *.py
 -> git push origin branch_name 
 assuming is the master branch, becomes: git push origin master
 
-continue here with pull/branching/..
+but Git is inherently distributed :) this means friends from all around
+the globe work together simultaneously
+->git pull origin master to get latest project updates
+
+exercise:
+-> echo 'some message' > README.md
+now the readme file has changed
+let's observe what happens when we echo this file in parallel
+
+case: I modified file and committed. Before pushing I need
+to modify again the commit:
+
+i. git reset HEAD <file>
+
+or
+
+ii. we will have to commit...push...and stage again the modified
+file (naah...)
+
+what we have changed, but not staged, simply type:
+git diff
+
+there are files that we don't want to stage at all (ex. log files,
+auto-generated src files). Edit a .gitignore file and let Git know what to stage and what not, example:
+cat /path/to/.gitignore
+*.[pyc] #any files that end in ".pyc"
+
+continue here with branching/..
 
 in the slides include screenshots (ex. where to clone, ssh)
 update: instead of slides help interactively
 
-
+auto-completion and other tips: https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
